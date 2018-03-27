@@ -9,4 +9,4 @@ to=$3
     exit 1;
 }
 
-wget -qO- "http://www.google.com/finance/converter?a=$value&from=$from&to=$to" | sed '/res/!d;s/<[^>]*>//g';
+curl -s "http://www.xe.com/currencyconverter/convert/?Amount=$value&From=$from&To=$to" | sed -n -n "s/.*<span class='uccResultAmount'>\([^<]*\)<\/span>.*/\1/p"
