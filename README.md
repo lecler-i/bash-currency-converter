@@ -1,12 +1,12 @@
 # bash-currency-converter
 A simple bash script to do currencies conversion in CLI
 
-It use google API and currency rates
+It use xe.com to fetch currency rates
 
-###Requirements
->bash wget
+### Requirements
+>bash curl sed
 
-###Usage
+### Usage
 
 ```bash
 ./bcc.sh 42 EUR USD
