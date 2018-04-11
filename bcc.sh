@@ -9,4 +9,4 @@ to=$3
     exit 1;
 }
 
-curl -s "http://www.xe.com/currencyconverter/convert/?Amount=$value&From=$from&To=$to" | sed -n -n "s/.*<span class='uccResultAmount'>\([^<]*\)<\/span>.*/\1/p"
+curl -s "https://www.xe.com/currencyconverter/convert/?Amount=$value&From=$from&To=$to" | sed -n -n "s/.*<span class='uccResultAmount'>\([^<]*\)<\/span>.*/\1/p"
