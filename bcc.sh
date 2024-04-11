@@ -10,7 +10,7 @@ to=$(echo $3 | tr '[:lower:]' '[:upper:]')
     exit 1;
 }
 
-# sed with updated regexp (2024-01-29)
-result=$(curl -sSL "https://www.xe.com/currencyconverter/convert/?Amount=$value&From=$from&To=$to" | sed -n 's/.*result__BigRate-[^>]*>\([^<]*\)<.*/\1/p');
+# sed with updated regexp (2024-04-11)
+result=$(curl -sSL "https://www.xe.com/currencyconverter/convert/?Amount=$value&From=$from&To=$to" | sed -n 's/.*=.*<\/p><p[^>]*>\([0-9]*\.[0-9]*\).*/\1/p');
 
 echo "$value $from = $result $to";
